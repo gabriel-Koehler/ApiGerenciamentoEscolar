@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "disciplina")
 public class Disciplina {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigoDisciplina;
     private String nomeDisciplina;
     private Integer cargaHoraria;

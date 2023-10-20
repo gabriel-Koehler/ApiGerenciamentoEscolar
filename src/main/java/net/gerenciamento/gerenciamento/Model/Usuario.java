@@ -5,18 +5,16 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-@MappedSuperclass
+@Inheritance(strategy = InheritanceType.JOINED)
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class Usuario {
+public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "idade")
     private Integer idade;
-    @Column(name = "nome")
     private String nome;
-    @Column(name = "endereco")
-    private String endereco;
+    private String senha;
 }

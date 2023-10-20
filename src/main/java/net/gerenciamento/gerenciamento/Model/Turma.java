@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 
@@ -17,10 +16,10 @@ import java.util.Set;
 public class Turma {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigoTurma;
-    @OneToMany
-    private ArrayList<Aluno> alunos=new ArrayList();
-    @OneToMany
-    private Set<Professor> professor;
+    @OneToMany(mappedBy = "turma")
+    private Set<Aluno> aluno;
+    @ManyToOne
+    private Professor professor;
 }

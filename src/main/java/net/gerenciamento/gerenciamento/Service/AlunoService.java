@@ -19,15 +19,15 @@ import java.util.Collection;
 public class AlunoService {
     AlunoRepository alunoRepository;
 
-    public Collection<Usuario> buscarTodos(){
+    public Collection<Aluno> buscarTodos(){
         return alunoRepository.findAll();
     }
 
-    public Usuario buscarUm(Integer id){
+    public Aluno buscarUm(Integer id){
         return alunoRepository.findById(id).get();
     }
 
-    public void salvar(Usuario usuario){
+    public void salvar(Aluno usuario){
         alunoRepository.save(usuario);
     }
 

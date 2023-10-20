@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 @Table(name = "nota")
 public class Nota {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @OneToOne
     private Disciplina disciplina;
     @ManyToOne
-    private Aluno idAluno;
-    private double valorNota;
+    private Aluno aluno;
+    private Double valorNota;
 }

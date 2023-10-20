@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.gerenciamento.gerenciamento.Model.Professor;
+import net.gerenciamento.gerenciamento.Model.Secretario;
 import net.gerenciamento.gerenciamento.Model.Turma;
 import net.gerenciamento.gerenciamento.Model.Usuario;
 import net.gerenciamento.gerenciamento.Repository.ProfessorRepository;
@@ -21,13 +22,13 @@ import java.util.Set;
 public class SecretarioService {
     SecretarioRepository secretarioRepository;
     ProfessorService professorService;
-    public Collection<Usuario> buscarTodos(){
+    public Collection<Secretario> buscarTodos(){
         return secretarioRepository.findAll();
     }
-    public Usuario buscarUm(Integer id){
+    public Secretario buscarUm(Integer id){
         return secretarioRepository.findById(id).get();
     }
-    public void salvar(Usuario usuario){
+    public void salvar(Secretario usuario){
         secretarioRepository.save(usuario);
     }
 }

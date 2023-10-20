@@ -3,7 +3,8 @@ package net.gerenciamento.gerenciamento.Service;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.gerenciamento.gerenciamento.Model.Usuario;
+import net.gerenciamento.gerenciamento.Model.Professor;
+
 import net.gerenciamento.gerenciamento.Repository.ProfessorRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,16 +18,16 @@ import java.util.Collection;
 public class ProfessorService {
     ProfessorRepository professorRepository;
 
-    public Collection<Usuario> buscarTodos(){
+    public Collection<Professor> buscarTodos(){
         return professorRepository.findAll();
     }
 
-    public Usuario buscarUm(Integer id){
+    public Professor buscarUm(Integer id){
         return  professorRepository.findById(id).get();
     }
 
-    public void salvar(Usuario usuario){
-        professorRepository.save(usuario);
+    public void salvar(Professor professor){
+        professorRepository.save(professor);
     }
 }
 

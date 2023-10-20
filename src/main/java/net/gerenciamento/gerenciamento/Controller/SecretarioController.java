@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import net.gerenciamento.gerenciamento.Model.Secretario;
 import net.gerenciamento.gerenciamento.Model.Usuario;
-import net.gerenciamento.gerenciamento.Service.ProfessorService;
 import net.gerenciamento.gerenciamento.Service.SecretarioService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +18,7 @@ public class SecretarioController {
 
     SecretarioService secretarioService;
     @GetMapping
-    public Collection<Usuario> buscarTodos(){
+    public Collection<Secretario> buscarTodos(){
         return secretarioService.buscarTodos();
     }
     @GetMapping("/{id}")
@@ -28,11 +27,11 @@ public class SecretarioController {
     }
 
     @PostMapping
-    public void salvar(@RequestBody Usuario usuario){
+    public void salvar(@RequestBody Secretario usuario){
         secretarioService.salvar(usuario);
     }
     @PutMapping
-    public void atualizar(@RequestBody Usuario usuario){
+    public void atualizar(@RequestBody Secretario usuario){
         secretarioService.salvar(usuario);
     }
 }

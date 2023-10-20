@@ -14,9 +14,9 @@ import java.util.ArrayList;
 @Table(name = "aluno")
 public class Aluno extends Usuario{
 
-    @OneToMany
-    private ArrayList<Nota> notas=new ArrayList<>();
-    @OneToOne
+    @OneToMany(mappedBy = "aluno")
+    private ArrayList<Nota> nota=new ArrayList<>();
+    @ManyToOne
     private Turma turma;
 
 }

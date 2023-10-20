@@ -34,17 +34,7 @@ public class TurmaService {
         turmaRepository.save(turma);
     }
 
-    public void adicionarProfessorTurma(Professor professor, Long idTurma){
-        Turma turmaEncontrada = buscarUm(idTurma);
-        turmaEncontrada.getProfessor().add(professor);
-        salvar(turmaEncontrada);
-    }
 
-    public void adicionarAlunoTurma(Aluno aluno, Long idTurma){
-        Turma turmaEncontrada = buscarUm(idTurma);
-        aluno.setTurma(turmaEncontrada);
-        salvar(turmaEncontrada);
-    }
 
 
 }

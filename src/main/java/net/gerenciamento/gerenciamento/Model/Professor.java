@@ -17,7 +17,7 @@ import java.util.Set;
 @Table(name = "professor")
 public class Professor extends Usuario{
 
-    @OneToMany
+    @OneToMany(mappedBy = "professor")
     private Set<Turma> turma;
     @OneToMany
     private Set<Disciplina> disciplina;

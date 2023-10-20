@@ -20,20 +20,20 @@ public class ProfessorController {
 
     ProfessorService professorService;
     @GetMapping
-    public Collection<Usuario> buscarTodos(){
+    public Collection<Professor> buscarTodos(){
         return professorService.buscarTodos();
     }
     @GetMapping("/{id}")
-    public Usuario buscarUm(@PathVariable Integer id){
+    public Professor buscarUm(@PathVariable Integer id){
         return professorService.buscarUm(id);
     }
 
     @PostMapping
-    public void salvar(@RequestBody Usuario usuario){
+    public void salvar(@RequestBody Professor usuario){
         professorService.salvar(usuario);
     }
     @PutMapping
-    public void atualizar(@RequestBody Usuario usuario){
+    public void atualizar(@RequestBody Professor usuario){
         professorService.salvar(usuario);
     }
 }

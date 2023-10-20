@@ -2,6 +2,7 @@ package net.gerenciamento.gerenciamento.Controller;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import net.gerenciamento.gerenciamento.Model.Aluno;
 import net.gerenciamento.gerenciamento.Model.Usuario;
 import net.gerenciamento.gerenciamento.Service.AlunoService;
 import org.springframework.stereotype.Controller;
@@ -17,20 +18,20 @@ public class AlunoController {
 
     AlunoService alunoService;
     @GetMapping
-    public Collection<Usuario> buscarTodos(){
+    public Collection<Aluno> buscarTodos(){
         return alunoService.buscarTodos();
     }
     @GetMapping("/{id}")
-    public Usuario buscarUm(@PathVariable Integer id){
+    public Aluno buscarUm(@PathVariable Integer id){
         return alunoService.buscarUm(id);
     }
 
     @PostMapping
-    public void salvar(@RequestBody Usuario usuario){
+    public void salvar(@RequestBody Aluno usuario){
         alunoService.salvar(usuario);
     }
     @PutMapping
-    public void atualizar(@RequestBody Usuario usuario){
+    public void atualizar(@RequestBody Aluno usuario){
         alunoService.salvar(usuario);
     }
 
